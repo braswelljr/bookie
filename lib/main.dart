@@ -17,8 +17,14 @@ class App extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorSchemeSeed: Colors.blue,
-        appBarTheme: AppBarTheme(
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: Colors.blue[300],
+          elevation: 10,
+          selectedItemColor: Colors.amberAccent[500],
+          selectedIconTheme: IconThemeData(
+            size: 20,
+            color: Colors.greenAccent[400],
+          ),
         ),
       ),
       home: const Home(title: 'Task'),
