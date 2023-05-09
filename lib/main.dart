@@ -1,5 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:bookie/providers/task_provider.dart';
 import 'package:bookie/screens/home_page.dart';
+import 'package:bookie/screens/splash_screen.dart';
+import 'package:bookie/screens/authentication/login_page.dart';
+import 'package:bookie/screens/authentication/signup_page.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -14,7 +18,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider(create: (context) => null),
+        Provider(create: (context) => TaskProvider()),
       ],
       child: MaterialApp(
         title: 'Bookie',
@@ -22,18 +26,29 @@ class App extends StatelessWidget {
         theme: ThemeData(
           useMaterial3: true,
           colorSchemeSeed: Colors.blue,
-          bottomNavigationBarTheme: BottomNavigationBarThemeData(
-            backgroundColor: Colors.blue[300],
-            elevation: 10,
-            selectedItemColor: Colors.amberAccent[500],
-            selectedIconTheme: IconThemeData(
-              size: 20,
-              color: Colors.greenAccent[400],
-            ),
-          ),
+          fontFamily: 'Montserrat',
         ),
-        home: const Home(title: 'Task'),
-        onGenerateRoute: null,
+        home: const SplashScreen(),
+        onGenerateRoute: (settings) {
+          switch (settings.name) {
+            case '/home':
+              return MaterialPageRoute(builder: (context) => const Home());
+            case '/login':
+              return MaterialPageRoute(builder: (context) => const Login());
+            case '/signup':
+              return MaterialPageRoute(builder: (context) => const Signup());
+
+            default:
+              return MaterialPageRoute(
+                builder: (context) => const SplashScreen(),
+              );
+          }
+        },
+        routes: {
+          '/home': (context) => const Home(),
+          '/login': (context) => const Login(),
+          '/signup': (context) => const Signup(),
+        },
       ),
     );
   }

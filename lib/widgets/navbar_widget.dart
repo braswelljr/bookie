@@ -14,7 +14,7 @@ class _NavbarWidgetState extends State<NavbarWidget> {
       height: 100,
       color: Colors.blue,
       child: Row(
-        children: [],
+        children: const [],
       ),
     );
   }
