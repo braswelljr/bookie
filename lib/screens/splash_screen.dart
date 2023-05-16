@@ -31,11 +31,6 @@ class _SplashScreenState extends State<SplashScreen> {
             fontFamily: 'Zen Dots',
           ),
         ),
-        // child: Image(
-        //   image: AssetImage('assets/images/task.png'),
-        //   width: 120,
-        //   height: 120,
-        // ),
       ),
     );
   }
