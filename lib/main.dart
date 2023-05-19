@@ -1,8 +1,5 @@
 import 'package:bookie/providers/task_provider.dart';
-import 'package:bookie/screens/home_page.dart';
 import 'package:bookie/screens/splash_screen.dart';
-import 'package:bookie/screens/authentication/login_page.dart';
-import 'package:bookie/screens/authentication/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -25,30 +22,14 @@ class App extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           useMaterial3: true,
-          colorSchemeSeed: Colors.blue,
-          fontFamily: 'Montserrat',
+          colorSchemeSeed: Colors.blue.shade700,
+          fontFamily: 'Jost',
         ),
         home: const SplashScreen(),
         onGenerateRoute: (settings) {
-          switch (settings.name) {
-            case '/home':
-              return MaterialPageRoute(builder: (context) => const Home());
-            case '/login':
-              return MaterialPageRoute(builder: (context) => const Login());
-            case '/signup':
-              return MaterialPageRoute(builder: (context) => const Signup());
-
-            default:
-              return MaterialPageRoute(
-                builder: (context) => const SplashScreen(),
-              );
-          }
+          return null;
         },
-        routes: {
-          '/home': (context) => const Home(),
-          '/login': (context) => const Login(),
-          '/signup': (context) => const Signup(),
-        },
+        routes: const {},
       ),
     );
   }

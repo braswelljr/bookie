@@ -81,11 +81,11 @@ flutter:
         - asset: assets/fonts/zen-dots.ttf
           style: normal
 
-    - family: Montserrat
+    - family: Jost
       fonts:
-        - asset: assets/fonts/montserrat.ttf
+        - asset: assets/fonts/jost.ttf
           style: normal
-        - asset: assets/fonts/montserrat-italic.ttf
+        - asset: assets/fonts/jost-italic.ttf
           style: italic
   #
   # For details regarding fonts from package dependencies,
