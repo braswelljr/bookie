@@ -13,8 +13,8 @@ class _NavbarWidgetState extends State<NavbarWidget> {
     return Container(
       height: 100,
       color: Colors.blue,
-      child: Row(
-        children: const [],
+      child: const Row(
+        children: [],
       ),
     );
   }
